@@ -47,6 +47,7 @@ function createConfig() {
       transports: ["stdout"]
     },
     mail: {
+      fromaddress: process.env.FROM_ADDRESS,
       transport: 'SMTP',
       options: {
         service: 'Sendgrid',
