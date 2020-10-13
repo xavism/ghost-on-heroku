@@ -79,7 +79,7 @@ into the {body} of the default.hbs template --}}
                             </div>
                         </section>
                         <section class="share">
-                            <a target="_blank" href="https://twitter.com/intent/tweet?url={{url absolute="true"}}&text={{meta_title}}%0a{{meta_description}}%0a%0a"><img width="45px" src="https://res.cloudinary.com/guesser/image/upload/c_scale,q_100,w_50/v1602591744/blog/Twitter_Logo_Blue_puykpt.png" alt="Twitter Logo to share"></a>
+                            <a target="_blank" href="https://twitter.com/intent/tweet?url={{url absolute="true"}}&via=guesser&text={{meta_title}}%0a"><img width="45px" src="https://res.cloudinary.com/guesser/image/upload/c_scale,q_100,w_50/v1602591744/blog/Twitter_Logo_Blue_puykpt.png" alt="Twitter Logo to share"></a>
                             <a target="_blank" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}"><img width="25px" src="https://res.cloudinary.com/guesser/image/upload/c_scale,q_100,w_50/v1602592564/blog/f_logo_RGB-Blue_250_l4cy7c.png" alt="Facebook Logo to share"></a>
                         </section>
 
@@ -112,7 +112,12 @@ into the {body} of the default.hbs template --}}
                 <section class="post-full-content">
                     <div class="post-content">
                         {{content}}
+                        
                     </div>
+                    <section class="share-links">
+                        <a target="_blank" href="https://twitter.com/intent/tweet?url={{url absolute="true"}}&via=guesser&text={{meta_title}}%0a"><img width="45px" src="https://res.cloudinary.com/guesser/image/upload/c_scale,q_100,w_50/v1602591744/blog/Twitter_Logo_Blue_puykpt.png" alt="Twitter Logo to share"></a>
+                        <a target="_blank" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}"><img width="25px" src="https://res.cloudinary.com/guesser/image/upload/c_scale,q_100,w_50/v1602592564/blog/f_logo_RGB-Blue_250_l4cy7c.png" alt="Facebook Logo to share"></a>
+                    </section>
                 </section>
 
             {{else}}
@@ -290,6 +295,23 @@ $(document).ready(function () {
 
 .post-full-byline-meta {
     flex: 1;
+}
+
+.share-links {
+    display: flex;
+    align-items: center;
+}
+.share-links a {
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.share-links a:hover {
+    box-shadow: none;
+}
+
+.share-links img {
+    margin: 0;
 }
 </style>
 {{/contentFor}}
